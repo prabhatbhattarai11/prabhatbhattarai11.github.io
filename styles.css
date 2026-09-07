@@ -35,16 +35,22 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- 3D Canvas Background Container --- */
+/* --- 3D Canvas Background Container (Fixed Layering) --- */
 #canvas-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
-  pointer-events: none;
+  z-index: -1 !important; /* Safely forces canvas behind everything */
+  pointer-events: none;   /* Lets clicks pass through to your content */
   overflow: hidden;
+}
+
+/* Ensure Main Content Appears Above the Canvas */
+main {
+  position: relative;
+  z-index: 1;
 }
 
 /* --- Page Loader --- */
@@ -439,4 +445,6 @@ footer {
   border-top: 1px solid var(--glass-border);
   color: var(--text-muted);
   font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
 }
