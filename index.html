@@ -1,238 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio of Prabhat Bhattarai - Web Developer, BIT Student, Cybersecurity & AI Enthusiast.">
-    
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-
-    <title>Prabhat Bhattarai | Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome CDN with SRI -->
-    <link rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-          crossorigin="anonymous" 
-          referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="wybnpxAEYlyWlQyLxEfisNkFOprrp9yEgQ1Y5R7AC50">
+  <meta name="description" content="Prabhat Bhattarai — BIT Student, Web Developer, Cybersecurity Enthusiast and AI Learner.">
+  <title>Prabhat Bhattarai — BIT Student & Developer</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Corrected CSS reference matching styles.css -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Three.js Library CDN for 3D background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
-    <!-- Ambient Blobs -->
-    <div class="blob-container" aria-hidden="true">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
+  <!-- 3D Interactive Canvas Background Container -->
+  <div id="canvas-container"></div>
+
+  <!-- Page Loader -->
+  <div id="pageLoader" class="page-loader" aria-label="Loading website">
+    <div class="loader-inner">
+      <div class="loader-logo"><span class="loader-dot"></span>prabhat<span>.dev</span></div>
+      <div class="loader-spinner"></div>
+      <div class="loader-progress"><span id="loaderProgress"></span></div>
+      <div class="loader-status mono" id="loaderStatus">INITIALIZING 3D ENVIRONMENT...</div>
     </div>
+  </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">&lt;Prabhat /&gt;</a>
-            
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="logo" href="#top" aria-label="Prabhat home">
+        <span class="badge-dot"></span>prabhat<span class="logo-accent">.dev</span>
+      </a>
 
-            <div class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-kicker">
+            <span class="live-dot"></span>
+            OPEN TO FREELANCE &amp; INTERNSHIP WORK
+          </div>
+
+          <h1>
+            Prabhat Bhattarai<br>
+            <span class="gradient-text">builds things,</span> mostly at 1am.
+          </h1>
+
+          <div class="type-line mono">
+            <span id="typeTarget"></span><span class="cur"></span>
+          </div>
+
+          <p class="desc">
+            BIT student at Bagmati University (Janamaitri Campus), Kathmandu —
+            currently in my 2nd semester and building real software on the side:
+            web apps, a bit of AI, and a growing interest in cybersecurity.
+          </p>
+
+          <div class="btn-row">
+            <a href="#projects" class="btn btn-primary">View Projects →</a>
+            <a href="resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">↓ View Resume</a>
+          </div>
         </div>
-    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <div class="status-badge">
-                    <span class="pulse-dot"></span>
-                    <span>OPEN TO FREELANCE & INTERNSHIP WORK</span>
-                </div>
-                
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Prabhat Bhattarai</span></h1>
-                <p class="hero-subtitle"><span id="typing-text"></span><span class="cursor">&nbsp;</span></p>
-                <p class="hero-description">
-                    2nd Semester BIT Student passionate about building scalable web applications, exploring Cybersecurity fundamentals, and learning Machine Learning.
-                </p>
-
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="assets/resume.pdf" class="btn btn-outline" download target="_blank" rel="noopener noreferrer">Resume <i class="fa-solid fa-download"></i></a>
-                </div>
-
-                <div class="hero-socials">
-                    <a href="https://github.com/prabhatbhattarai" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com/in/prabhatbhattarai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="mailto:prabhatbhattarai456@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="section-title-wrapper">
-                <h2 class="section-title">About Me</h2>
-                <div class="title-underline"></div>
+        <!-- Hero Photo -->
+        <div class="hero-photo-col reveal">
+          <div class="hero-photo-wrap">
+            <div class="hero-photo-ring">
+              <img
+                class="hero-photo-img"
+                src="profile.jpg"
+                alt="Prabhat Bhattarai"
+                onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');"
+              >
+              <div class="photo-fallback" aria-hidden="true">
+                <span>PB</span>
+              </div>
             </div>
 
-            <div class="about-grid">
-                <div class="about-card glass">
-                    <h3>Who I Am</h3>
-                    <p>I am a Bachelor of Information Technology (BIT) student at Bagmati University (Janamaitri Campus) in Kathmandu, Nepal. I specialize in modern full-stack development while developing a strong foundation in Cybersecurity and AI systems.</p>
-                </div>
-                
-                <div class="about-stats glass">
-                    <div class="stat-item">
-                        <span class="stat-number">2nd</span>
-                        <span class="stat-label">Semester BIT Student</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">2+</span>
-                        <span class="stat-label">Active Projects</span>
-                    </div>
-                </div>
+            <div class="float-badge badge-web" style="top:10%; left:-18%;">
+              <span class="badge-icon">🌐</span> Web Development
             </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="section-title-wrapper">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="title-underline"></div>
+            <div class="float-badge badge-js" style="top:50%; right:-20%;">
+              <span class="badge-icon">⚡</span> JavaScript
             </div>
-
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <article class="project-card glass">
-                    <div class="project-image">
-                        <img src="assets/karigar-preview.jpg" alt="Karigar Freelance Marketplace Preview" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h3>Karigar</h3>
-                        <p>A dedicated freelance marketplace designed for Nepal, enabling skilled individuals to list services and connect with local clients directly.</p>
-                        
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Express</span>
-                            <span>PostgreSQL</span>
-                            <span>Khalti</span>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/prabhatbhattarai/karigar" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Karigar Source Code"><i class="fa-brands fa-github"></i> Source</a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Karigar Live Demo"><i class="fa-solid fa-external-link"></i> Live Demo</a>
-                        </div>
-                    </div>
-                </article>
+            <div class="float-badge badge-seo" style="bottom:6%; left:4%;">
+              <span class="badge-icon">🔒</span> Cybersecurity
             </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="section-title-wrapper">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="skills-wrapper glass">
-                <div class="skill-category">
-                    <h3>Frontend Development</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
-                        <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3 / Glassmorphism</span>
-                        <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
-                        <span class="skill-tag"><i class="fa-brands fa-react"></i> React</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Backend & Databases</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag"><i class="fa-brands fa-node"></i> Node.js</span>
-                        <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
-                        <span class="skill-tag"><i class="fa-solid fa-database"></i> PostgreSQL / SQL</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Security & Core Focus</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag"><i class="fa-solid fa-shield-halved"></i> Web Security Basics</span>
-                        <span class="skill-tag"><i class="fa-solid fa-key"></i> JWT / Authentication</span>
-                        <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git Version Control</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="section-title-wrapper">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="contact-card glass">
-                <form action="https://formspree.io/f/your-endpoint" method="POST" class="contact-form">
-                    
-                    <!-- Honeypot Anti-Spam Field (Hidden from human users) -->
-                    <div style="display:none;" aria-hidden="true">
-                        <label for="website-confirm">Do not fill this out if you are human:</label>
-                        <input type="text" name="website-confirm" id="website-confirm" tabindex="-1" autocomplete="off">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required maxlength="100" autocomplete="name" placeholder="John Doe">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" required maxlength="254" autocomplete="email" placeholder="john@example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required maxlength="150" placeholder="Project Inquiry">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required maxlength="2000" placeholder="Hello Prabhat..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 Prabhat Bhattarai. All rights reserved.</p>
-        <div class="footer-socials">
-            <a href="https://github.com/prabhatbhattarai" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://linkedin.com/in/prabhatbhattarai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- About -->
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="reveal">
+          <div class="stat-card glass-card">
+            <div class="eyebrow">// 01 — snapshot</div>
+            <div class="mono location">Kathmandu, Nepal</div>
+
+            <div class="stat-grid">
+              <div><div class="stat-num">2nd</div><div class="stat-label">Semester, BIT</div></div>
+              <div><div class="stat-num">2+</div><div class="stat-label">Active projects</div></div>
+              <div><div class="stat-num">4</div><div class="stat-label">Core interests</div></div>
+              <div><div class="stat-num">∞</div><div class="stat-label">Things to learn</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="eyebrow">// 02 — about me</div>
+          <h2 class="section-title">Still early, already building.</h2>
+
+          <div class="about-text">
+            <p>
+              I'm a <strong>Bachelor of Information Technology</strong> student at
+              <strong>Bagmati University (Janamaitri Campus)</strong>, working through
+              core CS theory while spending most of my free time shipping modern web applications.
+            </p>
+            <p>
+              Right now that means <strong>Karigar</strong>, a freelance marketplace app
+              built for Nepal featuring a React frontend, Express.js backend, Postgres schema,
+              and Khalti payment integration.
+            </p>
+            <p>
+              Outside of coursework, I'm drawn toward <strong>AI</strong> and
+              <strong>cybersecurity</strong> — understanding how systems function and break,
+              while actively taking on freelance client work.
+            </p>
+          </div>
+
+          <!-- Terminal -->
+          <div class="terminal glass-card">
+            <div class="term-bar">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+              <span class="mono terminal-title">whoami.sh</span>
+            </div>
+
+            <div class="term-body">
+              <div class="ln"><span class="prompt">$</span> whoami</div>
+              <div class="ln">prabhat_bhattarai</div>
+
+              <div class="ln term-gap"><span class="prompt">$</span> cat interests.txt</div>
+              <div class="ln">→ <span class="str">"web development"</span></div>
+              <div class="ln">→ <span class="str">"artificial intelligence"</span></div>
+              <div class="ln">→ <span class="str">"cybersecurity"</span></div>
+              <div class="ln">→ <span class="str">"freelancing"</span></div>
+
+              <div class="ln term-gap"><span class="prompt">$</span> git log --oneline -1</div>
+              <div class="ln"><span class="comment">building Karigar — freelance marketplace for Nepal</span></div>
+
+              <div class="ln term-gap"><span class="prompt">$</span> <span class="key">echo</span> $STATUS</div>
+              <div class="ln status-ok">available for internships &amp; freelance projects ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="eyebrow">// 03 — experience &amp; education</div>
+        <h2 class="section-title">Where I've been</h2>
+        <p class="section-sub">A short work history alongside my current academic journey.</p>
+
+        <div class="timeline-grid">
+          <div class="reveal">
+            <h3 class="timeline-heading mono">Work Experience</h3>
+
+            <div class="timeline">
+              <div class="t-item">
+                <span class="t-status">Completed</span>
+                <h4>Video Editor &amp; Web Developer</h4>
+                <div class="t-sub">Smart Chiya — Kathmandu, Nepal</div>
+                <ul>
+                  <li>Produced and edited video content optimizing visual pacing for social engagement.</li>
+                  <li>Supported digital assets management and online brand presence.</li>
+                  <li>Collaborated on visual concepts to improve target audience strategy.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h3 class="timeline-heading mono">Education</h3>
+
+            <div class="timeline">
+              <div class="t-item">
+                <span class="t-status">In progress</span>
+                <h4>Bachelor of Information Technology (BIT)</h4>
+                <div class="t-sub">Bagmati University (Janamaitri Campus) — Kathmandu</div>
+                <ul>
+                  <li>Currently in 2nd semester covering math, programming fundamentals, and core CS theory.</li>
+                </ul>
+              </div>
+
+              <div class="t-item">
+                <span class="t-status">Completed</span>
+                <h4>High School Diploma</h4>
+                <div class="t-sub">Cardinal International Boarding High School — Kathmandu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="eyebrow">// 04 — skillset</div>
+        <h2 class="section-title">What I work with</h2>
+        <p class="section-sub">
+          Technologies and tools I use daily to turn ideas into digital products.
+        </p>
+
+        <div class="panel glass-card reveal" data-skills>
+          <div class="skills-grid">
+            <div>
+              <div class="skill-row" data-level="80">
+                <div class="skill-top"><span>HTML / CSS / JavaScript</span><span>80%</span></div>
+                <div class="bar-track"><div class="bar-fill"></div></div>
+              </div>
+
+              <div class="skill-row" data-level="65">
+                <div class="skill-top"><span>React</span><span>65%</span></div>
+                <div class="bar-track"><div class="bar-fill"></div></div>
+              </div>
+
+              <div class="skill-row" data-level="55">
+                <div class="skill-top"><span>Node.js / Express</span><span>55%</span></div>
+                <div class="bar-track"><div class="bar-fill"></div></div>
+              </div>
+
+              <div class="skill-row" data-level="50">
+                <div class="skill-top"><span>PostgreSQL / SQL</span><span>50%</span></div>
+                <div class="bar-track"><div class="bar-fill"></div></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="skill-row" data-level="70">
+                <div class="skill-top"><span>Python</span><span>70%</span></div>
+                <div class="bar-track"><div class="bar-fill"></div></div>
+              </div>
+
+              <div class="skill-row" data-level="40">
+                <div class="skill-top"><span>Cybersecurity fundamentals</span><span>40%</span></div>
+                <div class="bar-track"><div class="bar-fill"></div></div>
+              </div>
+
+              <div class="skill-row" data-level="35">
+                <div class="skill-top"><span>AI / Machine Learning</span><span>35%</span></div>
+                <div class="bar-track"><div class="bar-fill"></div></div>
+              </div>
+
+              <div class="skill-row" data-level="75">
+                <div class="skill-top"><span>Git &amp; GitHub</span><span>75%</span></div>
+                <div class="bar-track"><div class="bar-fill"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolbelt">
+            <span class="chip">VS Code</span>
+            <span class="chip">Discrete Math</span>
+            <span class="chip">JWT Auth</span>
+            <span class="chip">Khalti API</span>
+            <span class="chip">Linux basics</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">CapCut</span>
+            <span class="chip">Cloudflare Pages</span>
+            <span class="chip">Figma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="eyebrow">// 05 — projects</div>
+        <h2 class="section-title">Things I've built</h2>
+        <p class="section-sub">
+          Highlighted real-world applications and featured developments.
+        </p>
+
+        <div class="project-grid">
+          <article class="project-card glass-card reveal">
+            <div class="project-media">
+              <span>[ karigar/screenshot.png ]</span>
+            </div>
+
+            <div class="project-body">
+              <span class="project-tag">In progress</span>
+              <h3>Karigar — Freelance Marketplace</h3>
+              <p>
+                A freelance marketplace app tailored for Nepal, connecting local skilled
+                workers with clients featuring auth, database, and local payments.
+              </p>
+
+              <div class="stack-row">
+                <span>React</span>
+                <span>Express.js</span>
+                <span>PostgreSQL</span>
+                <span>JWT</span>
+                <span>Khalti Sandbox</span>
+              </div>
+
+              <div class="project-links">
+                <a href="#" aria-label="Karigar case study">Case study →</a>
+                <a href="#" aria-label="Karigar GitHub">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass-card reveal">
+            <div class="project-media">
+              <span>[ portfolio/screenshot.png ]</span>
+            </div>
+
+            <div class="project-body">
+              <span class="project-tag">Live</span>
+              <h3>Personal Portfolio</h3>
+              <p>
+                Hand-built modern personal site crafted with glassmorphism UI,
+                light pastel animated aesthetics, and high-performance design.
+              </p>
+
+              <div class="stack-row">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>GitHub Pages</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://prabhatbhattarai11.github.io/" target="_blank" rel="noopener">Live site ↗</a>
+                <a href="https://github.com/prabhatbhattarai11" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certificates">
+      <div class="wrap">
+        <div class="eyebrow">// 06 — certificates</div>
+        <h2 class="section-title">Certificates &amp; Coursework</h2>
+        <p class="section-sub">
+          Add your certifications here as you accomplish new milestones.
+        </p>
+
+        <div class="cert-grid">
+          <div class="cert-empty reveal">+ Add certificate</div>
+          <div class="cert-empty reveal">+ Add certificate</div>
+          <div class="cert-empty reveal">+ Add certificate</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub -->
+    <section id="github">
+      <div class="wrap">
+        <div class="eyebrow">// 07 — activity</div>
+        <h2 class="section-title">GitHub Contributions</h2>
+        <p class="section-sub">
+          Live developer activity graph pulled automatically from GitHub.
+        </p>
+
+        <div class="gh-panel glass-card reveal" id="ghPanel">
+          <img id="ghChartImg" alt="Prabhat's GitHub Contributions Graph"
+               referrerpolicy="no-referrer" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <div class="eyebrow">// 08 — contact</div>
+          <h2 class="section-title">Get in touch</h2>
+          <p class="section-sub">
+            Have a project in mind, want to collaborate, or looking for an intern?
+            Send a message.
+          </p>
+
+          <div class="contact-info">
+            <div class="row">
+              <div class="icon-box">🏛️</div>
+              <div>
+                <h4>University</h4>
+                <p>Bagmati University (Janamaitri Campus)</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="icon-box">📍</div>
+              <div>
+                <h4>Location</h4>
+                <p>Kathmandu, Nepal</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="icon-box">✉️</div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:prabhatbhattarai456@gmail.com">prabhatbhattarai456@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="icon-box">in</div>
+              <div>
+                <h4>LinkedIn</h4>
+                <a href="https://linkedin.com/in/prabhat-bhattarai-b45b7b378" target="_blank" rel="noopener">
+                  in/prabhat-bhattarai-b45b7b378
+                </a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="icon-box">📸</div>
+              <div>
+                <h4>Instagram</h4>
+                <a href="https://instagram.com/prabhat_bhattarai_" target="_blank" rel="noopener">
+                  @prabhat_bhattarai_
+                </a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="icon-box">🌐</div>
+              <div>
+                <h4>Facebook</h4>
+                <a href="https://www.facebook.com/share/1dwKjdqXLG/" target="_blank" rel="noopener">
+                  facebook.com/prabhat
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form glass-card reveal"
+              action="https://formspree.io/f/your-form-id"
+              method="POST">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="John Doe">
+            </div>
+
+            <div class="field">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+          </div>
+
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required
+                      placeholder="Hey Prabhat, let's talk about..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn">Send Message →</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 Prabhat Bhattarai. Hand-crafted in Kathmandu.</p>
+    </div>
+  </footer>
+
+  <!-- Script reference for Three.js and custom interactions -->
+  <script src="script.js"></script>
 </body>
 </html>
