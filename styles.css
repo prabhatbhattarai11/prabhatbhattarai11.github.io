@@ -1,10 +1,10 @@
-/* --- THEME VARIABLES (Default is Light Mode) --- */
+/* --- THEME VARIABLES --- */
 :root {
   --bg-color: #f8fafc;
   --text-main: #0f172a;
   --text-muted: #64748b;
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --border-color: rgba(15, 23, 42, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --border-color: rgba(15, 23, 42, 0.08);
   --accent: #4f46e5;
   --accent-hover: #4338ca;
   --input-bg: rgba(241, 245, 249, 0.8);
@@ -14,7 +14,7 @@ body.dark-mode {
   --bg-color: #0d1117;
   --text-main: #f0f6fc;
   --text-muted: #8b949e;
-  --card-bg: rgba(22, 27, 34, 0.7);
+  --card-bg: rgba(22, 27, 34, 0.75);
   --border-color: rgba(240, 246, 252, 0.1);
   --accent: #6366f1;
   --accent-hover: #4f46e5;
@@ -83,15 +83,16 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* --- NAVIGATION --- */
+/* --- NAVIGATION BAR --- */
 .nav {
   position: sticky;
   top: 0;
   background: var(--card-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 
 .nav-inner {
@@ -104,10 +105,11 @@ body {
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.25rem;
+  font-weight: 800;
+  font-size: 1.2rem;
   color: var(--text-main);
   text-decoration: none;
+  letter-spacing: -0.02em;
 }
 
 .logo-accent {
@@ -117,19 +119,45 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
 .nav-links a {
-  color: var(--text-main);
+  color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.2s;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  transition: all 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+  color: var(--text-main);
+  background: var(--border-color);
+}
+
+/* Theme Button */
+#themeToggleBtn {
+  background: var(--border-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+#themeToggleBtn:hover {
+  transform: scale(1.1);
+  border-color: var(--accent);
 }
 
 .menu-toggle {
@@ -290,7 +318,7 @@ body {
   backdrop-filter: blur(5px);
 }
 
-/* --- GENERAL SECTION STYLES --- */
+/* --- SECTIONS & CARDS --- */
 section {
   padding: 60px 0;
 }
@@ -320,7 +348,6 @@ section {
   border-radius: 1rem;
 }
 
-/* --- ABOUT SECTION --- */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -410,7 +437,7 @@ section {
 .term-body .status-ok { color: #16a34a; }
 .term-gap { margin-top: 10px; }
 
-/* --- PROJECTS & CARDS --- */
+/* Projects Grid */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -490,7 +517,7 @@ section {
   text-decoration: none;
 }
 
-/* --- SKILLS SECTION --- */
+/* Skills */
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -520,7 +547,6 @@ section {
 .bar-fill {
   height: 100%;
   background: var(--accent);
-  width: 0;
   transition: width 1s ease;
 }
 
@@ -538,7 +564,7 @@ section {
   font-family: monospace;
 }
 
-/* --- CERTIFICATES --- */
+/* Certificates */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -555,7 +581,7 @@ section {
   font-family: monospace;
 }
 
-/* --- TIMELINE --- */
+/* Timeline */
 .timeline {
   border-left: 2px solid var(--border-color);
   padding-left: 20px;
@@ -598,7 +624,7 @@ section {
   color: var(--text-muted);
 }
 
-/* --- SECTIONS 07 & 08 REVISED STYLING --- */
+/* Activity & Contact */
 .contact-activity-container {
   display: flex;
   flex-direction: column;
@@ -625,7 +651,6 @@ section {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
 }
 
 .contact-grid-modern {
@@ -760,7 +785,7 @@ section {
   text-align: center;
 }
 
-/* --- FOOTER --- */
+/* Footer */
 footer {
   padding: 40px 0;
   text-align: center;
@@ -770,7 +795,7 @@ footer {
   margin-top: 40px;
 }
 
-/* --- RESPONSIVE MEDIA QUERIES --- */
+/* Responsive Media Queries */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
