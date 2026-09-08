@@ -43,7 +43,7 @@ body {
   padding: 0 1.5rem;
 }
 
-/* Navigation & Mobile "More" Drawer */
+/* Header Navbar */
 header.nav {
   position: fixed;
   top: 1rem;
@@ -65,6 +65,7 @@ header.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
@@ -75,21 +76,22 @@ header.nav {
 }
 .logo-accent { color: var(--accent-purple); }
 
-.nav-links {
+/* Desktop Navigation Links */
+.desktop-nav-links {
   display: flex;
   list-style: none;
   gap: 1.5rem;
   align-items: center;
 }
 
-.nav-links a {
+.desktop-nav-links a {
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--text-main); }
+.desktop-nav-links a:hover { color: var(--text-main); }
 
 #themeToggleBtn {
   background: none;
@@ -98,9 +100,12 @@ header.nav {
   font-size: 1rem;
 }
 
-/* Mobile Toggle Button */
-.more-btn {
+/* Mobile Dropdown Styling */
+.mobile-nav-dropdown {
   display: none;
+}
+
+.more-toggle-btn {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--card-border);
   color: var(--text-main);
@@ -108,29 +113,46 @@ header.nav {
   border-radius: 20px;
   font-size: 0.85rem;
   cursor: pointer;
+  list-style: none;
+  display: flex;
   align-items: center;
   gap: 0.3rem;
+  user-select: none;
+}
+
+.more-toggle-btn::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-dropdown-links {
+  position: absolute;
+  top: 115%;
+  right: 0;
+  left: 0;
+  background: rgba(18, 18, 24, 0.95);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  list-style: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+}
+
+.mobile-dropdown-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 768px) {
-  .more-btn { display: inline-flex; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 110%;
-    left: 5%;
-    right: 5%;
-    background: rgba(18, 18, 24, 0.95);
-    border: 1px solid var(--card-border);
-    border-radius: 16px;
-    flex-direction: column;
-    padding: 1.2rem;
-    gap: 1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  }
-  .nav-links.active { display: flex; }
-  .more-btn .chevron { transition: transform 0.2s; }
-  .more-btn.active .chevron { transform: rotate(180deg); }
+  .desktop-nav-links { display: none; }
+  .mobile-nav-dropdown { display: block; }
 }
 
 /* Hero Section */
@@ -198,11 +220,11 @@ h1 { font-size: 2.8rem; line-height: 1.2; font-weight: 800; }
 /* Avatar Photo Sizing */
 .hero-card-frame {
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 220px;
+  height: 220px;
   margin: 0 auto;
   border-radius: 50%;
-  padding: 8px;
+  padding: 6px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
 }
