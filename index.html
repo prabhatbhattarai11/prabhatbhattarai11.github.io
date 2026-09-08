@@ -31,24 +31,18 @@
 </head>
 <body>
 
-  <!-- Page Loader -->
-  <div id="pageLoader" class="page-loader" aria-label="Loading website">
-    <div class="loader-inner">
-      <div class="loader-logo">Prabhat Bhattarai</div>
-      <div class="loader-subtitle" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 500;">IT Student</div>
-      <div class="loader-spinner"></div>
-      <div class="loader-status mono" id="loaderStatus">INITIALIZING ENVIRONMENT...</div>
-    </div>
-  </div>
+  <!-- Ambient Animated Background Lights -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
 
   <!-- Navigation -->
   <header class="nav">
     <div class="nav-inner">
       <a class="logo" href="#top" aria-label="Prabhat home">
-        prabhat<span class="logo-accent">bhattarai</span>
+        prabhat<span class="logo-accent">.dev</span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
 
@@ -59,7 +53,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><button id="themeToggleBtn" aria-label="Toggle Theme">🌙</button></li>
+        <li><button id="themeToggleBtn" class="theme-btn" aria-label="Toggle Theme">🌙</button></li>
       </ul>
     </div>
   </header>
@@ -69,57 +63,47 @@
     <!-- Hero -->
     <section class="hero">
       <div class="wrap hero-grid">
-        <div class="hero-content reveal">
+        <div class="hero-content">
           <div class="hero-kicker">
             <span class="live-dot"></span>
-            OPEN TO FREELANCE &amp; INTERNSHIP WORK
+            AVAILABLE FOR FREELANCE &amp; INTERNSHIPS
           </div>
 
           <h1>
             Prabhat Bhattarai<br>
-            <span class="gradient-text">builds things,</span> mostly at 1am.
+            <span class="gradient-text">Building Digital Experiences.</span>
           </h1>
 
           <div class="type-line mono">
-            <span id="typeTarget"></span><span class="cur"></span>
+            <span id="typeTarget">BIT Student & Full-Stack Web Developer</span>
           </div>
 
           <p class="desc">
-            BIT student at Bagmati University (Janamaitri Campus), Kathmandu —
-            currently in my 2nd semester and building real software on the side:
-            web apps, a bit of AI, and a growing interest in cybersecurity.
+            IT Student at Janamaitri Campus, Bagmati University. Crafts interactive web applications, explores AI workflows, and keeps an eye on security fundamentals.
           </p>
 
           <div class="btn-row">
-            <a href="#projects" class="btn btn-primary">View Projects →</a>
-            <a href="Prabhat_Bhattarai_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">↓ View Resume</a>
+            <a href="#projects" class="btn btn-primary">Explore Work <span class="arrow">→</span></a>
+            <a href="Prabhat_Bhattarai_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Resume ↗</a>
           </div>
         </div>
 
-        <!-- Hero Photo -->
-        <div class="hero-photo-col reveal">
-          <div class="hero-photo-wrap">
-            <div class="hero-photo-ring">
+        <!-- Hero Photo Frame -->
+        <div class="hero-photo-col">
+          <div class="hero-card-frame glass-card">
+            <div class="photo-container">
               <img
                 class="hero-photo-img"
                 src="profilewebsite.jpg"
                 alt="Prabhat Bhattarai"
                 onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');"
               >
-              <div class="photo-fallback" aria-hidden="true">
-                <span>PB</span>
-              </div>
+              <div class="photo-fallback" aria-hidden="true">PB</div>
             </div>
 
-            <div class="float-badge badge-web" style="top:10%; left:-18%;">
-              <span class="badge-icon">🌐</span> [ HTML5 ]
-            </div>
-            <div class="float-badge badge-js" style="top:50%; right:-20%;">
-              <span class="badge-icon">⚡</span> [ JavaScript ]
-            </div>
-            <div class="float-badge badge-seo" style="bottom:6%; left:4%;">
-              <span class="badge-icon">🔒</span> [ Cybersecurity ]
-            </div>
+            <div class="float-badge badge-1">🌐 Modern Web</div>
+            <div class="float-badge badge-2">⚡ JavaScript & React</div>
+            <div class="float-badge badge-3">🔒 Cybersecurity</div>
           </div>
         </div>
       </div>
@@ -128,39 +112,28 @@
     <!-- About -->
     <section id="about">
       <div class="wrap about-grid">
-        <div class="reveal">
-          <div class="stat-card glass-card">
-            <div class="eyebrow">// 01 — snapshot</div>
-            <div class="mono location">📍 Kathmandu, Nepal</div>
+        <div class="glass-card stat-card">
+          <div class="eyebrow">// QUICK STATS</div>
+          <div class="mono location">📍 Kathmandu, Nepal</div>
 
-            <div class="stat-grid">
-              <div><div class="stat-num">2nd</div><div class="stat-label">Semester, BIT</div></div>
-              <div><div class="stat-num">2+</div><div class="stat-label">Active projects</div></div>
-              <div><div class="stat-num">4</div><div class="stat-label">Core interests</div></div>
-              <div><div class="stat-num">∞</div><div class="stat-label">Things to learn</div></div>
-            </div>
+          <div class="stat-grid">
+            <div class="stat-box"><div class="stat-num">2nd</div><div class="stat-label">Sem BIT</div></div>
+            <div class="stat-box"><div class="stat-num">5+</div><div class="stat-label">Projects</div></div>
+            <div class="stat-box"><div class="stat-num">98%</div><div class="stat-label">SEO Avg</div></div>
+            <div class="stat-box"><div class="stat-num">24/7</div><div class="stat-label">Curiosity</div></div>
           </div>
         </div>
 
-        <div class="reveal">
-          <div class="eyebrow">// 02 — about me</div>
-          <h2 class="section-title">Still early, already building.</h2>
+        <div>
+          <div class="eyebrow">// ABOUT ME</div>
+          <h2 class="section-title">Driven by code & problem solving.</h2>
 
           <div class="about-text">
             <p>
-              I'm a <strong>Bachelor of Information Technology</strong> student at
-              <strong>Bagmati University (Janamaitri Campus)</strong>, working through
-              core CS theory while spending most of my free time shipping modern web applications.
+              I am an <strong>Information Technology student</strong> combining theoretical computer science with practical production experience.
             </p>
             <p>
-              Right now that means <strong>Karigar</strong>, a freelance marketplace app
-              built for Nepal featuring a React frontend, Express.js backend, Postgres schema,
-              and Khalti payment integration.
-            </p>
-            <p>
-              Outside of coursework, I'm drawn toward <strong>AI</strong> and
-              <strong>cybersecurity</strong> — understanding how systems function and break,
-              while actively taking on freelance client work.
+              Currently engineering <strong>Karigar</strong>, a localized freelancing ecosystem in Nepal featuring a React architecture, Express REST APIs, PostgreSQL, and Khalti payment flow integration.
             </p>
           </div>
 
@@ -169,83 +142,39 @@
               <span class="term-dot red"></span>
               <span class="term-dot yellow"></span>
               <span class="term-dot green"></span>
-              <span class="mono terminal-title">whoami.sh</span>
+              <span class="mono terminal-title">profile.json</span>
             </div>
-
             <div class="term-body">
-              <div class="ln"><span class="prompt">$</span> whoami</div>
-              <div class="ln">prabhat_bhattarai</div>
-
-              <div class="ln term-gap"><span class="prompt">$</span> cat interests.txt</div>
-              <div class="ln">→ <span class="str">"web development"</span></div>
-              <div class="ln">→ <span class="str">"artificial intelligence"</span></div>
-              <div class="ln">→ <span class="str">"cybersecurity"</span></div>
-              <div class="ln">→ <span class="str">"freelancing"</span></div>
-
-              <div class="ln term-gap"><span class="prompt">$</span> git log --oneline -1</div>
-              <div class="ln"><span class="comment">building Karigar — freelance marketplace for Nepal</span></div>
-
-              <div class="ln term-gap"><span class="prompt">$</span> <span class="key">echo</span> $STATUS</div>
-              <div class="ln status-ok">available for internships &amp; freelance projects ✓</div>
+              <pre><code>{
+  <span class="key">"developer"</span>: <span class="str">"Prabhat Bhattarai"</span>,
+  <span class="key">"focus"</span>: [<span class="str">"Frontend"</span>, <span class="str">"Fullstack APIs"</span>, <span class="str">"UI/UX"</span>],
+  <span class="key">"status"</span>: <span class="status-ok">"Ready to work"</span>
+}</code></pre>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- Experience / Milestones -->
     <section id="experience">
       <div class="wrap">
-        <div class="eyebrow">// 03 — achievements &amp; education</div>
-        <h2 class="section-title">Milestones &amp; Track Record</h2>
-        <p class="section-sub">Overview of performance metrics and my current academic journey.</p>
+        <div class="eyebrow">// JOURNEY</div>
+        <h2 class="section-title">Academic & Achievements</h2>
 
-        <div class="project-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-bottom: 3rem;">
-          <div class="glass-card reveal" style="padding: 2rem; border-radius: 1rem;">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;" class="mono">5+</div>
-            <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem;">Projects Delivered</div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">End-to-end web solutions</div>
+        <div class="timeline">
+          <div class="t-item glass-card">
+            <span class="t-badge">CURRENT</span>
+            <h3>Bachelor of Information Technology (BIT)</h3>
+            <p class="t-sub">Bagmati University (Janamaitri Campus)</p>
+            <p>Mastering core computer science concepts, object-oriented programming, database management, and data structures.</p>
           </div>
 
-          <div class="glass-card reveal" style="padding: 2rem; border-radius: 1rem;">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;" class="mono">98%</div>
-            <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem;">SEO Performance</div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">Average optimization score</div>
-          </div>
-
-          <div class="glass-card reveal" style="padding: 2rem; border-radius: 1rem;">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;" class="mono">2+</div>
-            <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem;">Years Experience</div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">In web development</div>
-          </div>
-
-          <div class="glass-card reveal" style="padding: 2rem; border-radius: 1rem;">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;" class="mono">24/7</div>
-            <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem;">Support Hours</div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">Responsive assistance</div>
-          </div>
-        </div>
-
-        <div class="timeline-grid" style="grid-template-columns: 1fr;">
-          <div class="reveal">
-            <h3 class="timeline-heading mono">Education</h3>
-
-            <div class="timeline">
-              <div class="t-item">
-                <span class="t-status">In progress</span>
-                <h4>Bachelor of Information Technology (BIT)</h4>
-                <div class="t-sub">Bagmati University (Janamaitri Campus) — Kathmandu</div>
-                <ul>
-                  <li>Currently in 2nd semester covering math, programming fundamentals, and core CS theory.</li>
-                </ul>
-              </div>
-
-              <div class="t-item">
-                <span class="t-status">Completed</span>
-                <h4>High School Diploma</h4>
-                <div class="t-sub">Cardinal International Boarding High School — Kathmandu</div>
-              </div>
-            </div>
+          <div class="t-item glass-card">
+            <span class="t-badge completed">COMPLETED</span>
+            <h3>High School Education</h3>
+            <p class="t-sub">Cardinal International Boarding High School</p>
+            <p>Completed higher secondary studies with a strong foundation in physical science and mathematics.</p>
           </div>
         </div>
       </div>
@@ -254,68 +183,35 @@
     <!-- Skills -->
     <section id="skills">
       <div class="wrap">
-        <div class="eyebrow">// 04 — skillset</div>
-        <h2 class="section-title">What I work with</h2>
-        <p class="section-sub">
-          Technologies and tools I use daily to turn ideas into digital products.
-        </p>
+        <div class="eyebrow">// TECH STACK</div>
+        <h2 class="section-title">Skills & Capabilities</h2>
 
-        <div class="panel glass-card reveal" data-skills>
+        <div class="glass-card skills-container">
           <div class="skills-grid">
-            <div>
-              <div class="skill-row" data-level="80">
-                <div class="skill-top"><span>HTML / CSS / JavaScript</span><span>80%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width: 80%;"></div></div>
-              </div>
-
-              <div class="skill-row" data-level="65">
-                <div class="skill-top"><span>React</span><span>65%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width: 65%;"></div></div>
-              </div>
-
-              <div class="skill-row" data-level="55">
-                <div class="skill-top"><span>Node.js / Express</span><span>55%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width: 55%;"></div></div>
-              </div>
-
-              <div class="skill-row" data-level="50">
-                <div class="skill-top"><span>PostgreSQL / SQL</span><span>50%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width: 50%;"></div></div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>HTML / CSS / JS</span><span>85%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width: 85%;"></div></div>
             </div>
-
-            <div>
-              <div class="skill-row" data-level="70">
-                <div class="skill-top"><span>Python</span><span>70%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width: 70%;"></div></div>
-              </div>
-
-              <div class="skill-row" data-level="40">
-                <div class="skill-top"><span>Cybersecurity fundamentals</span><span>40%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width: 40%;"></div></div>
-              </div>
-
-              <div class="skill-row" data-level="35">
-                <div class="skill-top"><span>AI / Machine Learning</span><span>35%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width: 35%;"></div></div>
-              </div>
-
-              <div class="skill-row" data-level="75">
-                <div class="skill-top"><span>Git &amp; GitHub</span><span>75%</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width: 75%;"></div></div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>React</span><span>70%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width: 70%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Node.js / Express</span><span>60%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width: 60%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>PostgreSQL / SQL</span><span>55%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width: 55%;"></div></div>
             </div>
           </div>
 
           <div class="toolbelt">
-            <span class="chip">VS Code</span>
-            <span class="chip">Discrete Math</span>
-            <span class="chip">JWT Auth</span>
-            <span class="chip">Khalti API</span>
-            <span class="chip">Linux basics</span>
+            <span class="chip">Git / GitHub</span>
             <span class="chip">REST APIs</span>
-            <span class="chip">CapCut</span>
-            <span class="chip">Cloudflare Pages</span>
+            <span class="chip">Python</span>
+            <span class="chip">Khalti Payment API</span>
+            <span class="chip">Linux Essentials</span>
             <span class="chip">Figma</span>
           </div>
         </div>
@@ -325,65 +221,29 @@
     <!-- Projects -->
     <section id="projects">
       <div class="wrap">
-        <div class="eyebrow">// 05 — projects</div>
-        <h2 class="section-title">Things I've built</h2>
-        <p class="section-sub">
-          Highlighted real-world applications and featured developments.
-        </p>
+        <div class="eyebrow">// PORTFOLIO</div>
+        <h2 class="section-title">Featured Projects</h2>
 
         <div class="project-grid">
-          <article class="project-card glass-card reveal">
-            <div class="project-media">
-              <span>[ karigar/screenshot.png ]</span>
+          <article class="project-card glass-card">
+            <div class="project-header">
+              <span class="project-tag">IN DEVELOPMENT</span>
+              <h3>Karigar — Freelance Platform</h3>
             </div>
-
-            <div class="project-body">
-              <span class="project-tag">In progress</span>
-              <h3>Karigar — Freelance Marketplace</h3>
-              <p>
-                A freelance marketplace app tailored for Nepal, connecting local skilled
-                workers with clients featuring auth, database, and local payments.
-              </p>
-
-              <div class="stack-row">
-                <span>React</span>
-                <span>Express.js</span>
-                <span>PostgreSQL</span>
-                <span>JWT</span>
-                <span>Khalti Sandbox</span>
-              </div>
-
-              <div class="project-links">
-                <a href="#" aria-label="Karigar case study">Case study →</a>
-                <a href="#" aria-label="Karigar GitHub">GitHub ↗</a>
-              </div>
+            <p>A full-stack freelance service platform designed to bridge local skills with clients across Nepal.</p>
+            <div class="stack-row">
+              <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Khalti API</span>
             </div>
           </article>
 
-          <article class="project-card glass-card reveal">
-            <div class="project-media">
-              <span>[ portfolio/screenshot.png ]</span>
+          <article class="project-card glass-card">
+            <div class="project-header">
+              <span class="project-tag live">LIVE</span>
+              <h3>Modern Web Portfolio</h3>
             </div>
-
-            <div class="project-body">
-              <span class="project-tag">Live</span>
-              <h3>Personal Portfolio</h3>
-              <p>
-                Hand-built modern personal site crafted with glassmorphism UI,
-                light pastel animated aesthetics, and high-performance design.
-              </p>
-
-              <div class="stack-row">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>GitHub Pages</span>
-              </div>
-
-              <div class="project-links">
-                <a href="https://prabhatbhattarai11.github.io/" target="_blank" rel="noopener">Live site ↗</a>
-                <a href="https://github.com/prabhatbhattarai11" target="_blank" rel="noopener">GitHub ↗</a>
-              </div>
+            <p>An interactive, responsive portfolio built with modern design guidelines and glassmorphism UI elements.</p>
+            <div class="stack-row">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub Pages</span>
             </div>
           </article>
         </div>
@@ -393,140 +253,38 @@
     <!-- Certificates -->
     <section id="certificates">
       <div class="wrap">
-        <div class="eyebrow">// 06 — certificates</div>
-        <h2 class="section-title">Certificates &amp; Coursework</h2>
-        <p class="section-sub">
-          Add your certifications here as you accomplish new milestones.
-        </p>
+        <div class="eyebrow">// CERTIFICATIONS</div>
+        <h2 class="section-title">Coursework & Training</h2>
 
         <div class="cert-grid">
-          <div class="cert-empty reveal">+ Add certificate</div>
-          <div class="cert-empty reveal">+ Add certificate</div>
-          <div class="cert-empty reveal">+ Add certificate</div>
+          <div class="cert-card glass-card">+ Certification Slot 1</div>
+          <div class="cert-card glass-card">+ Certification Slot 2</div>
         </div>
       </div>
     </section>
 
-    <!-- Activity & Contact Container -->
-    <div class="contact-activity-container wrap">
+    <!-- Contact -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="eyebrow">// GET IN TOUCH</div>
+        <h2 class="section-title">Let's Connect</h2>
 
-      <!-- GitHub Activity -->
-      <section class="portfolio-section" id="github">
-        <div class="eyebrow">// 07 — activity</div>
-        <h2 class="section-title">GitHub Contributions</h2>
-        <p class="section-sub">Live developer activity graph pulled automatically from GitHub.</p>
-        
-        <div class="activity-card glass-card reveal" id="ghPanel">
-          <img id="ghChartImg" src="https://ghchart.rshah.org/prabhatbhattarai11" alt="Prabhat's GitHub Contributions Graph" class="github-graph-img" referrerpolicy="no-referrer" loading="lazy">
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section class="portfolio-section" id="contact">
-        <div class="eyebrow">// 08 — contact</div>
-        <h2 class="section-title">Get in touch</h2>
-        <p class="section-sub">Have a project in mind, want to collaborate, or looking for an intern? Send a message.</p>
-
-        <div class="contact-grid-modern reveal">
-          <div class="info-sidebar">
-            <div class="contact-info">
-              <div class="contact-card-item">
-                <div class="icon-box">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
-                </div>
-                <div>
-                  <h4>University</h4>
-                  <p>Bagmati University (Janamaitri Campus)</p>
-                </div>
-              </div>
-
-              <div class="contact-card-item">
-                <div class="icon-box">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <div>
-                  <h4>Location</h4>
-                  <p>Kathmandu, Nepal</p>
-                </div>
-              </div>
-
-              <div class="contact-card-item">
-                <div class="icon-box">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </div>
-                <div>
-                  <h4>Email</h4>
-                  <a href="mailto:prabhatbhattarai456@gmail.com">prabhatbhattarai456@gmail.com</a>
-                </div>
-              </div>
-
-              <div class="contact-card-item">
-                <div class="icon-box linkedin-bg">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </div>
-                <div>
-                  <h4>LinkedIn</h4>
-                  <a href="https://linkedin.com/in/prabhat-bhattarai-b45b7b378" target="_blank" rel="noopener">in/prabhat-bhattarai</a>
-                </div>
-              </div>
-
-              <div class="contact-card-item">
-                <div class="icon-box instagram-bg">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </div>
-                <div>
-                  <h4>Instagram</h4>
-                  <a href="https://instagram.com/prabhat_bhattarai_" target="_blank" rel="noopener">@prabhat_bhattarai_</a>
-                </div>
-              </div>
-
-              <div class="contact-card-item">
-                <div class="icon-box facebook-bg">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                </div>
-                <div>
-                  <h4>Facebook</h4>
-                  <a href="https://www.facebook.com/share/1dwKjdqXLG/" target="_blank" rel="noopener">facebook.com/prabhat</a>
-                </div>
-              </div>
-            </div>
+        <div class="contact-box glass-card">
+          <div class="contact-links">
+            <a href="mailto:prabhatbhattarai456@gmail.com" class="c-link">✉️ prabhatbhattarai456@gmail.com</a>
+            <a href="https://linkedin.com/in/prabhat-bhattarai-b45b7b378" target="_blank" rel="noopener" class="c-link">💼 LinkedIn</a>
+            <a href="https://github.com/prabhatbhattarai11" target="_blank" rel="noopener" class="c-link">🐙 GitHub</a>
+            <a href="https://instagram.com/prabhat_bhattarai_" target="_blank" rel="noopener" class="c-link">📸 Instagram</a>
           </div>
-
-          <form class="contact-form glass-card" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
-            <div class="form-row">
-              <div class="field">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required placeholder="John Doe">
-              </div>
-
-              <div class="field">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required placeholder="john@example.com">
-              </div>
-            </div>
-
-            <div class="field full">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required placeholder="Hey Prabhat, let's talk about..."></textarea>
-            </div>
-
-            <button type="submit" id="submitBtn" class="btn btn-primary submit-btn">
-              <span>Send Message</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </button>
-            
-            <p id="formStatus" class="form-status-msg"></p>
-          </form>
-
         </div>
-      </section>
+      </div>
+    </section>
 
-    </div>
   </main>
 
   <footer>
     <div class="wrap">
-      <p>© 2026 Prabhat Bhattarai. Hand-crafted in Kathmandu.</p>
+      <p>© 2026 Prabhat Bhattarai. Designed & Built in Kathmandu.</p>
     </div>
   </footer>
 
