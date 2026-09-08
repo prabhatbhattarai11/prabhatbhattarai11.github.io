@@ -1,44 +1,20 @@
-// --- Dark/Light Mode Switch ---
-const themeToggleBtn = document.getElementById('themeToggleBtn');
-const bodyElement = document.body;
+// Theme Toggle Functionality with LocalStorage Persistence
+const themeBtn = document.getElementById('themeToggleBtn');
 
-// Read saved state or system configuration
+// Read saved preference or default to dark
 const savedTheme = localStorage.getItem('theme');
-const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
-  bodyElement.classList.add('light-mode');
-  if (themeToggleBtn) themeToggleBtn.textContent = '☀️';
-} else {
-  bodyElement.classList.remove('light-mode');
-  if (themeToggleBtn) themeToggleBtn.textContent = '🌙';
+if (savedTheme === 'light') {
+  document.body.classList.add('light-mode');
+  if (themeBtn) themeBtn.textContent = '☀️';
 }
 
-if (themeToggleBtn) {
-  themeToggleBtn.addEventListener('click', () => {
-    bodyElement.classList.toggle('light-mode');
-    const isLight = bodyElement.classList.contains('light-mode');
-    themeToggleBtn.textContent = isLight ? '☀️' : '🌙';
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    
+    // Update icon and save state
+    themeBtn.textContent = isLight ? '☀️' : '🌙';
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
-}
-
-// --- Mobile Navigation Toggle ---
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener('click', () => {
-    const isExpanded = navLinks.style.display === 'flex';
-    navLinks.style.display = isExpanded ? 'none' : 'flex';
-    if (!isExpanded) {
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '60px';
-      navLinks.style.left = '0';
-      navLinks.style.right = '0';
-      navLinks.style.background = 'var(--nav-bg)';
-      navLinks.style.padding = '20px';
-    }
   });
 }
