@@ -51,22 +51,31 @@
         prabhat<span class="logo-accent">.dev</span>
       </a>
 
-      <!-- Mobile "More" Menu Toggle -->
-      <button class="more-btn" id="menuToggle" aria-label="Toggle Navigation Menu">
-        <span>More</span>
-        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-
-      <!-- Navigation Drawer -->
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about" class="nav-item">About</a></li>
-        <li><a href="#experience" class="nav-item">Experience</a></li>
-        <li><a href="#skills" class="nav-item">Skills</a></li>
-        <li><a href="#projects" class="nav-item">Projects</a></li>
-        <li><a href="#certificates" class="nav-item">Certificates</a></li>
-        <li><a href="#contact" class="nav-item">Contact</a></li>
+      <!-- Desktop Links -->
+      <ul class="desktop-nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><button id="themeToggleBtn" aria-label="Toggle Theme">🌙</button></li>
       </ul>
+
+      <!-- Mobile Dropdown Menu -->
+      <details class="mobile-nav-dropdown" id="mobileMenuDetails">
+        <summary class="more-toggle-btn">
+          More <span>▾</span>
+        </summary>
+        <ul class="mobile-dropdown-links">
+          <li><a href="#about" class="mob-link">About</a></li>
+          <li><a href="#experience" class="mob-link">Experience</a></li>
+          <li><a href="#skills" class="mob-link">Skills</a></li>
+          <li><a href="#projects" class="mob-link">Projects</a></li>
+          <li><a href="#certificates" class="mob-link">Certificates</a></li>
+          <li><a href="#contact" class="mob-link">Contact</a></li>
+        </ul>
+      </details>
     </div>
   </header>
 
