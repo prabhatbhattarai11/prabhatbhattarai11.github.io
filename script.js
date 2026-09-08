@@ -1,25 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-  const navItems = document.querySelectorAll('.nav-item');
+  const detailsElement = document.getElementById('mobileMenuDetails');
+  const mobLinks = document.querySelectorAll('.mob-link');
 
-  // Toggle Mobile "More" Menu
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
-
-    // Auto-close menu when clicking any nav item
-    navItems.forEach(item => {
-      item.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
+  // Close mobile dropdown menu automatically when a link is tapped
+  if (detailsElement) {
+    mobLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        detailsElement.removeAttribute('open');
       });
     });
   }
 
-  // Smooth Scroll offset for sticky header
+  // Smooth Scrolling setup
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
