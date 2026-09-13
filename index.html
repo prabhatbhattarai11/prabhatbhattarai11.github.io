@@ -10,7 +10,7 @@
 
   <link rel="canonical" href="https://www.prabhatbhattarai.info.np/">
   
-  <!-- UPDATED FAVICON LINK HERE -->
+  <!-- FAVICON LINK -->
   <link rel="icon" type="image/jpeg" href="profile.jpg">
 
   <meta property="og:type" content="website">
@@ -433,6 +433,22 @@ html[data-theme="dark"] .project-tag.study{background:rgba(167,139,250,.14);colo
 .proj-link:hover{gap:.7rem}
 
 /* ============================================================
+   RESUME
+   ============================================================ */
+.resume-content { display: flex; flex-direction: column; gap: 2rem; }
+.resume-block { padding: 2rem; border-radius: 22px; background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+.resume-block h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--text); display: flex; align-items: center; gap: .5rem; }
+.resume-block h3::before { content: ''; width: 4px; height: 20px; background: var(--accent); border-radius: 99px; display: inline-block; }
+.resume-block p { color: var(--muted); font-size: .95rem; line-height: 1.7; margin-bottom: .8rem; }
+.resume-skills-grid { display: flex; flex-wrap: wrap; gap: .5rem; }
+.resume-skills-grid span { font-family: 'JetBrains Mono', monospace; font-size: .75rem; padding: .4rem .8rem; border-radius: 8px; background: var(--accent-soft); color: var(--accent); border: 1px solid var(--border); }
+.resume-job { margin-bottom: 1.5rem; }
+.resume-job:last-child { margin-bottom: 0; }
+.resume-job h4 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: .2rem; }
+.resume-job span { font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--accent-2); font-weight: 600; }
+.resume-job p { margin-top: .5rem; font-size: .9rem; }
+
+/* ============================================================
    CERTIFICATES
    ============================================================ */
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem}
@@ -709,6 +725,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 0;text-align:center;fon
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
       <li><a href="#certificates">Certificates</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><button id="themeToggleBtn" type="button" aria-label="Toggle Theme" title="Switch to dark mode"><span class="icon" id="themeIcon">☀️</span></button></li>
@@ -720,6 +737,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 0;text-align:center;fon
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
         <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#" id="mobileThemeBtn" data-theme-toggle>🌙 Switch Theme</a></li>
@@ -740,8 +758,8 @@ footer{border-top:1px solid var(--border);padding:2.2rem 0;text-align:center;fon
         <p class="desc">Creative and self-driven Web Developer, Web Designer, and Video Editor pursuing a Bachelor of Information Technology (BIT). I turn ideas into clean, functional digital products and compelling visual stories.</p>
         <div class="btn-row">
           <a href="#projects" class="btn btn-primary"><span>Explore Work</span><span class="arrow">→</span></a>
-          <!-- Updated Resume Link: This points to the file you are overwriting on GitHub -->
-          <a href="Prabhat_Bhattarai_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener"><span>Download Résumé</span><span class="arrow">↗</span></a>
+          <!-- UPDATED RESUME LINK to match the file name on GitHub -->
+          <a href="Prabhat_Bhattarai_Resume%20(2).pdf" class="btn btn-ghost" target="_blank" rel="noopener"><span>Download Résumé</span><span class="arrow">↗</span></a>
         </div>
       </div>
       <div class="hero-photo-col">
@@ -945,6 +963,78 @@ footer{border-top:1px solid var(--border);padding:2.2rem 0;text-align:center;fon
           <div class="stack-row"><span>Programming</span><span>Teamwork</span><span>Software Tools</span></div>
           <a href="#contact" class="proj-link">Learn more →</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESUME SECTION (NEW)
+       ============================================================ -->
+  <section id="resume">
+    <div class="wrap reveal">
+      <div class="eyebrow">// RESUME</div>
+      <h2 class="section-title">My Resume</h2>
+      <div class="resume-content">
+        
+        <div class="resume-block">
+          <h3>Profile</h3>
+          <p>BIT student with hands-on experience building responsive, accessible websites and interactive interfaces using HTML, CSS, JavaScript, and React. Comfortable with Git-based workflows and modern deployment platforms including Vercel, GitHub Pages, and Cloudflare Pages. Focused on frontend development and UI/UX, with additional experience in short-form video editing and visual storytelling.</p>
+        </div>
+
+        <div class="resume-block">
+          <h3>Technical Skills</h3>
+          <div class="resume-skills-grid">
+            <span>HTML5 & CSS3</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Responsive Design</span>
+            <span>Figma / UI Design</span>
+            <span>Git & GitHub</span>
+            <span>VS Code</span>
+            <span>Vercel / GitHub Pages / Cloudflare</span>
+            <span>CapCut Video Editing</span>
+          </div>
+        </div>
+
+        <div class="resume-block">
+          <h3>Projects</h3>
+          <div class="resume-job">
+            <h4>Chiya SAN - Cafe Website</h4>
+            <span>React · JavaScript · Responsive Design · Vercel</span>
+            <p>Developed a responsive website for a cultural tea cafe, presenting business information, menu content, and the overall cafe experience. Designed the interface for clear navigation and mobile-friendly viewing across devices. Deployed and maintained the live project using Vercel.</p>
+          </div>
+          <div class="resume-job">
+            <h4>Personal Portfolio Website</h4>
+            <span>HTML5 · CSS3 · JavaScript · GitHub Pages · Cloudflare Pages</span>
+            <p>Designed and developed a personal portfolio to showcase web development, UI/UX, and video-editing work. Implemented fully responsive layouts and deployed the site using modern web hosting platforms.</p>
+          </div>
+          <div class="resume-job">
+            <h4>BIT Student Skill Development Program</h4>
+            <span>Programming · Teamwork · Software Tools</span>
+            <p>Participated in practical skill-development activities covering programming, software tools, and collaborative work.</p>
+          </div>
+        </div>
+
+        <div class="resume-block">
+          <h3>Education & Career Focus</h3>
+          <div class="resume-job">
+            <h4>Bachelor of Information Technology (BIT)</h4>
+            <span>Janamaitri Multiple Campus, Kuleswor, Kathmandu | 2025 - Present (2nd Semester)</span>
+          </div>
+          <div class="resume-job">
+            <h4>High School Diploma</h4>
+            <span>Cardinal International Boarding High School | 2023 - 2025</span>
+          </div>
+          <div class="resume-job">
+            <h4>Career Focus</h4>
+            <p>Frontend Web Development · UI/UX · IT Support / Software Development Internships</p>
+          </div>
+          <div class="resume-job">
+            <h4>Relevant Coursework</h4>
+            <p>Programming Fundamentals · Data Structures · Web Development · Computing Fundamentals · Software Development</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
